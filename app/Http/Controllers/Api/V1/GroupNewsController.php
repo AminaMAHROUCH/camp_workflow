@@ -14,7 +14,7 @@ class GroupNewsController extends Controller
 {
     public function index()
     {
-    	 
+    	
     	$user = RestTokenHelper::getAuthUser();
     	$groupNews = [];
 

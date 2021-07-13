@@ -25,7 +25,7 @@ class RestTokenHelper
 
 		return $authUser;
 	}
- 
+
 	public static function getUserFromToken($token)
 	{
 		try {
