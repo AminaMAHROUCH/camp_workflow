@@ -16,7 +16,7 @@ class CreateProgrameGeneralTable extends Migration
         Schema::create('programe_general', function (Blueprint $table) {
             $table->increments('id');
             $table->date('day')->nullable();
-            $table->time('time')->nullable();
+            $table->string('titre')->nullable();
             $table->text('contenu');
             $table->text('remarque')->nullable();
             $table->timestamps();
