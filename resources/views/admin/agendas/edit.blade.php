@@ -21,14 +21,21 @@
                 <span class="help-block">{{ trans('cruds.agenda.fields.date_helper') }}</span>
             </div>
             <div class="form-group">
-                <label for="content">{{ trans('cruds.agenda.fields.content') }}</label>
-                <textarea class="form-control  {{ $errors->has('content') ? 'is-invalid' : '' }}" name="content" id="content">{!! old('content', $agenda->content) !!}</textarea>
+                <label for="description">{{ trans('cruds.agenda.fields.content') }}</label>
+                 <input class="form-control  {{ $errors->has('content') ? 'is-invalid' : '' }}" type="text" name="content" id="content" value="{{ old('content', $agenda->content) }}" required>
                 @if($errors->has('content'))
                     <div class="invalid-feedback">
                         {{ $errors->first('content') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.agenda.fields.content_helper') }}</span>
+                <span class="help-block">{{ trans('cruds.agenda.fields.date_helper') }}</span>
+            </div>
+            <div class="form-group">
+                <label for="content">تفاصيل البرنامج</label>
+                <textarea class="form-control ckeditor {{ $errors->has('description') ? 'is-invalid' : '' }}" name="description" id="description">{!! old('description', $agenda->description) !!}</textarea>
+                @if($errors->has('description'))
+                    <span class="text-danger">{{ $errors->first('description') }}</span>
+                @endif
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">

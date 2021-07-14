@@ -12,6 +12,7 @@ class CreateAgendasTable extends Migration
             $table->increments('id');
             $table->date('date');
             $table->longText('content');
+            $table->longText('description');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -28,6 +28,9 @@
                         <th>
                             {{ trans('cruds.agenda.fields.date') }}
                         </th>
+                            <th>
+                            {{ trans('cruds.agenda.fields.content') }}
+                        </th>
                         <th>
                             &nbsp;
                         </th>
@@ -44,6 +47,9 @@
                             </td>
                             <td>
                                 {{ $agenda->date ?? '' }}
+                            </td>
+                              <td>
+                                {{ $agenda->content}}
                             </td>
                             <td>
                                 @can('agenda_show')

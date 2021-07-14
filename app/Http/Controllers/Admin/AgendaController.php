@@ -36,6 +36,7 @@ class AgendaController extends Controller
     public function store(StoreAgendaRequest $request)
     {
         $agenda = Agenda::create($request->all());
+        dd($agenda);
 
         if ($media = $request->input('ck-media', false)) {
             Media::whereIn('id', $media)->update(['model_id' => $agenda->id]);

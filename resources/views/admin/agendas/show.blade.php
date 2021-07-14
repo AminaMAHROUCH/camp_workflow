@@ -39,6 +39,14 @@
                             {!! $agenda->content !!}
                         </td>
                     </tr>
+                     <tr>
+                        <th>
+                           تفاصيل البرنامج
+                        </th>
+                        <td>
+                            {!! $agenda->description !!}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <div class="form-group">
