@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header">
-    التقييم
+    تقييم المخيم
     </div>
 
     <div class="card-body">

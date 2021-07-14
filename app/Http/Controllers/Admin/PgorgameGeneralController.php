@@ -47,7 +47,7 @@ class PgorgameGeneralController extends Controller
      */
     public function store(Request $request)
     {
-        $programeGeneral = ProgrameGeneral::create($request->all());
+        $programeGenerals = ProgrameGeneral::create($request->all());
 
         return redirect()->route('admin.programes-generales.index');
     }
@@ -58,8 +58,9 @@ class PgorgameGeneralController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(ProgrameGeneral $programeGeneral)
+    public function show( $id)
     {
+        $programeGeneral = ProgrameGeneral::find($id);
         return view('admin.programesgenerales.show', compact('programeGeneral'));
     }
 
@@ -69,9 +70,9 @@ class PgorgameGeneralController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(ProgrameGeneral $programeGeneral)
+    public function edit($id)
     {
-        $programeGenerals = ProgrameGeneral::all();
+        $programeGeneral = ProgrameGeneral::find($id);
 
         return view('admin.programesgenerales.edit', compact('programeGeneral'));
     }
@@ -98,6 +99,9 @@ class PgorgameGeneralController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $programeGeneral = ProgrameGeneral::find($id);
+        $programeGeneral->delete();
+
+        return back();
     }
 }

@@ -179,6 +179,26 @@
                 </a>
             </li>
         @endcan
+        @can('agenda_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.programes-generales.index") }}" class="c-sidebar-nav-link {{ request()->is('admin/agendas') || request()->is('admin/agendas/*') ? 'active' : '' }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    البرنامج العام
+                </a>
+            </li>
+        @endcan
+        @can('agenda_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.evaluations.index") }}" class="c-sidebar-nav-link {{ request()->is('admin/agendas') || request()->is('admin/agendas/*') ? 'active' : '' }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    تقييم المخيم 
+                </a>
+            </li>
+        @endcan
         @can('meeting_access')
             <li class="c-sidebar-nav-item">
                 <a href="{{ route("admin.meetings.index") }}" class="c-sidebar-nav-link {{ request()->is('admin/meetings') || request()->is('admin/meetings/*') ? 'active' : '' }}">
