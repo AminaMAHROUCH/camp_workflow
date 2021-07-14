@@ -89,6 +89,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     //Link
     Route::delete('links/destroy', 'LinksController@massDestroy')->name('links.massDestroy');
     Route::resource('links', 'LinksController');
+
+    // Evaluations
+    Route::resource('evaluations', 'EvaluationController');
+
+    // Programe general
+    Route::resource('programes-generales', 'PgorgameGeneralController');
 });
 Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 'middleware' => ['auth']], function () {
 // Change password
