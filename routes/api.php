@@ -21,5 +21,6 @@ Route::group([
     Route::get('workshopNews', 'WorkshopNewsController@index');
     Route::get('meeting', 'MeetingController@index');
     Route::get('agendas', 'AgendaController@index');
+    Route::get('groups', 'AgendaController@allGroup');
     Route::get('links', 'LinkController@index');
 });
